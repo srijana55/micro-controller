@@ -1,12 +1,13 @@
 ;wap to a) clear acc  then
 ;  	b) add 3 to the accumulator ten times
 
+;this prgm adds values to the acc ten times.
 	ORG, 0000H
-	MOV A, #0
-	MOV R2, #10
-AGAIN:  ADD A, #03
-	DJNZ R2, AGAIN
-	MOV R5,A
+	MOV A, #0  ;A=0, clear acc
+	MOV R2, #10  ;load counter r2*10
+AGAIN:  ADD A, #03  ;add to 3 acc
+	DJNZ R2, AGAIN  ; repeat until r2*0(10 times)
+	MOV R5,A  ; save A in r5
 	END
 	
 
