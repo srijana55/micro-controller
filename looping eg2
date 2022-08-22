@@ -1,11 +1,11 @@
 ; wap to (a) load the accumulator with the value 55h, and(b) complement the acc 700 times
 
 	ORG  0
-	MOV A, #55H
-	MOV R3, #10
-NEXT:   MOV R2, #70
-AGAIN:  CPL A
-	DJNZ R2, AGAIN
+	MOV A, #55H   
+	MOV R3, #10  ;r3=10 , the outer loop count
+NEXT:   MOV R2, #70  ;r2=70,  "    inner    "   "
+AGAIN:  CPL A		; coplement A register
+	DJNZ R2, AGAIN  ; repeat it 70 times(inner loop)
 	DJNZ R3,NEXT
 	END
 	
